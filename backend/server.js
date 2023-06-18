@@ -5,12 +5,14 @@ dotenv.config();
 import products from './data/products.js';
 const port = process.env.PORT || 5000;
 
+// initialize server/express/app
 const app = express();
 
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
+// route for all products
 app.get('/api/products', (req, res) => {
   res.json(products);
 });
@@ -21,4 +23,5 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product);
 });
 
+// start server?
 app.listen(port, () => console.log(`Server running on port ${port}`));
