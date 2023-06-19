@@ -1,9 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
+import connectDB from './config/db.js';
 // need file extension for local imported files
 import products from './data/products.js';
 const port = process.env.PORT || 5000;
+
+connectDB(); // connect to MongoDB
 
 // initialize server/express/app
 const app = express();
