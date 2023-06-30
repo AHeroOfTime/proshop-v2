@@ -25,6 +25,7 @@ const cartSlice = createSlice({
         state.cartItems = [...state.cartItems, item];
       }
 
+      // refactor all of these prices
       // calculate items price
       state.itemsPrice = addDecimals(
         state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0),
