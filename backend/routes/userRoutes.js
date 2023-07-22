@@ -10,7 +10,7 @@ import {
   deleteUser,
   getUserByID,
   updateUser,
-} from '../controllers/productController.js';
+} from '../controllers/userController.js';
 
 // post req => register, get => admin, get all users
 router.route('/').post(registerUser).get(getUsers);
