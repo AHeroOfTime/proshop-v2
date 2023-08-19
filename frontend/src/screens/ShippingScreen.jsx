@@ -3,8 +3,8 @@ import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import FormContainer from '../components/FormContainer';
-import { saveShippingAddress } from '../slices/cartSlice';
 import CheckoutSteps from '../components/CheckoutSteps';
+import { saveShippingAddress } from '../slices/cartSlice';
 
 const ShippingScreen = () => {
   const cart = useSelector((state) => state.cart);
@@ -17,8 +17,8 @@ const ShippingScreen = () => {
   );
   const [country, setCountry] = useState(shippingAddress?.country || '');
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -39,6 +39,7 @@ const ShippingScreen = () => {
             type='text'
             placeholder='Enter Address'
             value={address}
+            required
             onChange={(e) => setAddress(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -48,6 +49,7 @@ const ShippingScreen = () => {
             type='text'
             placeholder='Enter City'
             value={city}
+            required
             onChange={(e) => setCity(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -57,6 +59,7 @@ const ShippingScreen = () => {
             type='text'
             placeholder='Enter Postal Code'
             value={postalCode}
+            required
             onChange={(e) => setPostalCode(e.target.value)}
           ></Form.Control>
         </Form.Group>
@@ -66,6 +69,7 @@ const ShippingScreen = () => {
             type='text'
             placeholder='Enter Country'
             value={country}
+            required
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
