@@ -117,7 +117,7 @@ const OrderScreen = () => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shpping</h2>
+              <h2>Shipping</h2>
               <p>
                 <strong>Name: </strong> {order.user.name}
               </p>
